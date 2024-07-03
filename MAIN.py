@@ -3,11 +3,15 @@ import discord
 import google.generativeai as genai
 import asyncio
 from dotenv import load_dotenv
+import streamlit as st
 
 load_dotenv()
 
-token = os.getenv('Discord_Token')
-api_key = os.getenv('GOOGLE_API_KEY')
+# token = os.getenv('Discord_Token')
+# api_key = os.getenv('GOOGLE_API_KEY')
+
+token = st.secrets["token"]
+api_key = st.secretes["api_key"]
 
 
 class MyClient(discord.Client):
